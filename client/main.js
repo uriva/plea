@@ -32,10 +32,10 @@ angular.module('plea').controller('mainCtrl', ['$scope', '$meteor',
     function($scope, $meteor) {
         console.log('mainCtrl constructor');
         $scope.finalText = [];
-        $scope.startListening = startListening;
-        startListening(text => {
+        $scope.startListening = () => startListening(text => {
             $scope.finalText.push(text);
             $scope.$apply();
         });
+        $scope.startListening();
     }
 ]);
