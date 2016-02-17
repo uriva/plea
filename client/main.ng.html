@@ -1,6 +1,10 @@
-<div ng-controller="mainCtrl">
-  <button ng-click="startListening()">Click to start listening</button>
+<div ng-controller="mainCtrl as ctrl">
+  <button ng-click="ctrl.startListening()">Click to start listening</button>
   <div>
-    <span>{{finalText[finalText.length - 1]}}</span>
+    <span>{{ctrl.finalText[ctrl.finalText.length - 1]}}</span>
+  </div>
+  <div>
+    <textarea ng-model="ctrl.grammar"></textarea>
+    <button ng-click="ctrl.readGrammar()">Read grammar</button>
   </div>
 </div>
